@@ -38,6 +38,11 @@ const items = [
 
 // Omit the 'age' element
 
-const person = items // append your code here
+const person = items 
+	.filter(item => item[0] !== 'age')
+	.reduce((object, [key, value]) => {
+		object[key] =value;
+		return object;
+	}, {});
 
 test("Problem 4", person)
